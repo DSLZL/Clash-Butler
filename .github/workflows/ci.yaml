@@ -1,10 +1,12 @@
 name: ci
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+      timezone: Asia/Shanghai
+    - cron: '0 12 * * *'
+      timezone: Asia/Shanghai
 
 env:
   CARGO_TERM_COLOR: always
